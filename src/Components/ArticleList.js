@@ -1,3 +1,4 @@
+
 import { List,Grid,Header,Image } from "semantic-ui-react";
 import {withRouter ,Link} from 'react-router-dom'
 
@@ -28,25 +29,25 @@ class ArticleItem extends Component {
               }}
             >
               <Header as="h3">{this.state.article.title}</Header>
-               <List.Description style={{ margin: "20px 0" }}>
-                  {this.state.article.description}
-                </List.Description>
-                 <List bulleted horizontal>
-                  <List.Item>
+              <List.Description style={{ margin: "20px 0" }}>
+                {this.state.article.description}
+              </List.Description>
+              <List bulleted horizontal>
+                <List.Item>
                   <Link to={{
                     pathname: '/article',
                     state: { article: this.state.article }
                   }}>
                       <p>{this.state.article.source.name}</p>
                   </Link>
-                  </List.Item>
-                  <List.Item>{this.state.article.publishedAt.split("T")[0]}</List.Item>
-                  </List>
-                 </Grid.Column>
-                 <Grid.Column width={5}>
-                   <Image src={this.state.article.urlToImage} />
-                 </Grid.Column>
-               </Grid>
+                </List.Item>
+                <List.Item>{this.state.article.publishedAt.split("T")[0]}</List.Item>
+              </List>
+            </Grid.Column>
+            <Grid.Column width={5}>
+              <Image src={this.state.article.urlToImage} />
+            </Grid.Column>
+          </Grid>
       </List.Item>
       
       </div>
